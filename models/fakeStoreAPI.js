@@ -14,14 +14,6 @@ class StoreModel {
     const response = await axios.get(`${this.apiUrl}/products/categories`);
     return response.data;
   }
-
-  // filterProducts(category) {
-  //   if (!category || category === 'all') {
-  //     return this.allProducts;
-  //   }
-
-  //   return this.allProducts.filter(product => product.category === category);
-  // }
 }
 
 module.exports = new StoreModel();

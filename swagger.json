@@ -1,0 +1,52 @@
+{
+  "swagger": "2.0",
+  "info": {
+  "version": "1.0.0", 
+  "title": "Faux Store",
+  "description": "Fake store to demonstrate full stack engineering",
+  "license": {
+  "name": "MIT", "url": "https://opensource.org/licenses/MIT"
+  }
+  },
+  "host": "localhost:3000", "basePath": "/",
+  "tags": [
+  {
+  "name": "Faux Store",
+  "description": "API for fake store in the system"
+  }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/api/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Products",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of products from the API."
+          }
+        }
+      }
+    },
+    "/api/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "get list of categories",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of categories from the API."
+          }
+        }
+      }
+    }
+
+  }
+}
