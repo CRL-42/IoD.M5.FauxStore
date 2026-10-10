@@ -12,7 +12,7 @@
   "tags": [
   {
   "name": "Faux Store",
-  "description": "API for fake store in the system"
+  "description": "API for fake store"
   }
   ],
   "schemes": ["http"],
@@ -28,7 +28,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "List of products from the API."
+            "description": "Products from the API."
           }
         }
       }
@@ -43,6 +43,26 @@
         "responses": {
           "200": {
             "description": "List of categories from the API."
+          }
+        }
+      }
+    },
+    "/api/filter": {
+      "get": {
+        "tags": [
+          "Product filter"
+        ],
+        "summary": "get list of products by category",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Products by category"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products by category."
           }
         }
       }

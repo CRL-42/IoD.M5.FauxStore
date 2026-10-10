@@ -20,8 +20,30 @@ const getCategories = async (req, res) => {
     }
 };
 
+const filterProducts = async (req, res) => {
+    try {
+        const category = req.query.category;
+        const products = await StoreModel.getProducts();
+        
+        if (!category || category === 'all') {
+            return res.json(products);
+        }
+        else {
+            const filtered = products.filter(product =>
+                product.category &&
+                product.category.toLowerCase() === String(category).toLowerCase()
+            );
+            return res.json(filtered);
+        }
+    }
+    catch (err) {
+        return res.status(500).json({error: 'Failed to filter products.'});
+    }
+};
+
 module.exports = {
     getProducts,
-    getCategories
+    getCategories,
+    filterProducts
 };
 
